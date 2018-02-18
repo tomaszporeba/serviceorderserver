@@ -1,0 +1,42 @@
+# config context path to "/" by setting an empty string
+server:
+  port : 8050
+  contextPath:
+
+
+# JACKSON
+spring:
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+
+
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL5Dialect
+      ddl-auto: create-drop
+  datasource:
+    platform: mysql
+    url: jdbc:mysql://127.0.0.1:3305/serviceOrder
+    username: root 
+    password: pr0st000
+    driverClassName: com.mysql.jdbc.Driver
+    
+    
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 604800
+  route:
+    registration:
+      path: register
+    authentication:
+      path: auth
+      refresh: refresh
+
+#logging:
+#  level:
+#    org.springframework:
+#      security: DEBUG
